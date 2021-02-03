@@ -26,6 +26,8 @@ html {
 body {
   min-block-size: 100%;
   min-inline-size: 100%;
+
+  margin: 0;
   box-sizing: border-box;
 
   display: grid;
