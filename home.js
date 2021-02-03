@@ -1,5 +1,6 @@
 import confetti from 'canvas-confetti'
 import $ from 'blingblingjs'
+import './style.css'
 
 confetti.create(null, {
   resize: true,
