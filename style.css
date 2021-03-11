@@ -1,26 +1,55 @@
+@custom-media --motionOK (prefers-reduced-motion: no-preference);
+
 :root {
-  --surface: lch(10 0 0);
-  --text: lch(80 0 0);
+  --space-xxs: .25rem;
+  --space-xs:  .5rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+  --space-xxl: 6rem;
+
+  --surface1: lch(10 0 0);
+  --surface2: lch(15 0 0);
+
+  --text1: lch(95 0 0);
+  --text2: lch(75 0 0);
+
   --brand: lch(64 40 347);
 
-  @media (prefers-color-scheme: light) {
-    --surface: lch(98 0 0);
-    --text: lch(30 0 0);
+  @media (prefers-color-scheme: light) { & {
+    --surface1: lch(90 0 0);
+    --surface2: lch(100 0 0);
+
+    --text1: lch(20 0 0);
+    --text2: lch(40 0 0);
+
     --brand: lch(65 64 350);
 
-    @media (dynamic-range: high) {
+    @media (dynamic-range: high) { & {
       --brand: color(display-p3 1 0 1);
-    }
-  }
+    }}
+  }}
 }
 
-::selection {
-  background-color: var(--brand);
+* {
+  box-sizing: border-box;
+  margin: unset;
+  min-width: 0;
+  background-origin: border-box;
 }
 
 html {
   block-size: 100%;
   inline-size: 100%;
+
+  &:focus-within {
+    scroll-behavior: smooth;
+
+    @media (--motionOK) { & {
+      scroll-behavior: auto;
+    }}
+  }
 }
 
 body {
@@ -32,10 +61,10 @@ body {
 
   display: grid;
   place-content: center;
-  gap: 2ch;
+  gap: var(--space-md);
 
-  background: var(--surface);
-  color: var(--text);
+  background: var(--surface1);
+  color: var(--text1);
   font-family: system-ui, sans-serif;
 }
 
@@ -43,11 +72,6 @@ body {
   body {
     grid-auto-flow: column;
   }
-}
-
-body,p,ul,dl,dd,dt,figure,
-h1,h2,h3,h4,h5,h6,small {
-  margin: 0;
 }
 
 a {
@@ -71,7 +95,20 @@ p {
   max-inline-size: 45ch;
 }
 
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
 main {
   text-align: center;
-  margin-top: 60px;
+  background: var(--surface2);
+  display: grid;
+  gap: var(--space-xs);
+  padding: var(--space-xl);
+  border-radius: 1ch;
 }
