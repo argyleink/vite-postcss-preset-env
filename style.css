@@ -32,32 +32,27 @@
   }}
 }
 
-* {
+/* mini reset */
+:where(*) {
   box-sizing: border-box;
-  margin: unset;
-  min-width: 0;
   background-origin: border-box;
+  background-repeat: no-repeat;
+  margin: unset;
+  min-width: 0px;
 }
 
 html {
   block-size: 100%;
   inline-size: 100%;
 
-  &:focus-within {
+  @media (--motionOK) { & {
     scroll-behavior: smooth;
-
-    @media (--motionOK) { & {
-      scroll-behavior: auto;
-    }}
-  }
+  }}
 }
 
 body {
   min-block-size: 100%;
   min-inline-size: 100%;
-
-  margin: 0;
-  box-sizing: border-box;
 
   display: grid;
   place-content: center;
@@ -103,6 +98,8 @@ img, picture {
 input, button, textarea, select {
   font: inherit;
 }
+
+/* end reset */
 
 main {
   text-align: center;
