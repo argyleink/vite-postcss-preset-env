@@ -37,7 +37,7 @@
   box-sizing: border-box;
   background-origin: border-box;
   background-repeat: no-repeat;
-  margin: unset;
+  margin: 0;
 }
 
 html {
