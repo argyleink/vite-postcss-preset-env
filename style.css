@@ -33,7 +33,7 @@
 }
 
 /* mini reset */
-:where(*) {
+* {
   box-sizing: border-box;
   background-origin: border-box;
   background-repeat: no-repeat;
