@@ -12,6 +12,10 @@ module.exports = {
         'gap-properties': false,
         'custom-properties': false,
         'place-properties': false,
+        'not-pseudo-class': false,
+        'focus-visible-pseudo-class': false,
+        'focus-within-pseudo-class': false,
+        'color-functional-notation': false,
       }
     }),
   ]
